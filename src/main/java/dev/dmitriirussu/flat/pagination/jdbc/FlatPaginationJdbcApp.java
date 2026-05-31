@@ -13,7 +13,7 @@ public class FlatPaginationJdbcApp {
 		SpringApplication.run(FlatPaginationJdbcApp.class, args);
 	}
 	// Demo output for manual verification of graph extraction queries
-	@Bean
+	/*@Bean
 	CommandLineRunner demo(OwnerReadRepository repository) {
 		return args -> {
 			System.out.println("\n=== page - 0 ===\n");
@@ -23,5 +23,5 @@ public class FlatPaginationJdbcApp {
 			System.out.println(repository.findAllFlat(new PageRequest(1, 2)));
 			System.out.println();
 		};
-	}
+	}*/
 }
