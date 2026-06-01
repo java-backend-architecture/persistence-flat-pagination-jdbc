@@ -2,7 +2,7 @@ package dev.dmitriirussu.flat.pagination.jdbc.infrastructure;
 
 import dev.dmitriirussu.flat.pagination.jdbc.application.OwnerReadRepository;
 import dev.dmitriirussu.flat.pagination.jdbc.application.OwnerView;
-import dev.dmitriirussu.flat.pagination.jdbc.application.PageRequest;
+import dev.dmitriirussu.flat.pagination.jdbc.application.PageQuery;
 import dev.dmitriirussu.flat.pagination.jdbc.application.PageResult;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
@@ -36,7 +36,7 @@ public class JdbcOwnerReadRepository implements OwnerReadRepository {
             """;
     }
 
-    public PageResult<OwnerView> findAllFlat(PageRequest request) {
+    public PageResult<OwnerView> findAllFlat(PageQuery request) {
 
         int offset = request.page() * request.size();
 

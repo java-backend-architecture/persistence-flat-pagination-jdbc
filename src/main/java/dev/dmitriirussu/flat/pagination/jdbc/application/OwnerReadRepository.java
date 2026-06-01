@@ -7,5 +7,5 @@ package dev.dmitriirussu.flat.pagination.jdbc.application;
  * infrastructure provides the implementation.
  */
 public interface OwnerReadRepository {
-    PageResult<OwnerView> findAllFlat(PageRequest request);
+    PageResult<OwnerView> findAllFlat(PageQuery request);
 }
