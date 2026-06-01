@@ -21,7 +21,7 @@ A minimal JDBC example of offset-based pagination for flat entity queries — no
 application/
     OwnerReadRepository   ← port (interface)
     OwnerView             ← read model
-    PageRequest           ← pagination input
+    PageQuery             ← pagination input
     PageResult<T>         ← pagination output
 
 infrastructure/
@@ -34,10 +34,10 @@ infrastructure/
 
 ```java
 // page 0, 2 items per page
-repository.findAllFlat(new PageRequest(0, 2));
+repository.findAllFlat(new PageQuery(0, 2));
 
 // page 1, 2 items per page
-repository.findAllFlat(new PageRequest(1, 2));
+repository.findAllFlat(new PageQuery(1, 2));
 ```
 
 Output:
@@ -50,7 +50,7 @@ PageResult[content=[OwnerView[id=1, name=jack1], OwnerView[id=2, name=jack2]], p
 PageResult[content=[OwnerView[id=3, name=jack3], OwnerView[id=4, name=jack4]], page=1, size=2, total=10]
 ```
 
-`PageRequest` and `PageResult` have zero framework dependencies — copy them into any Java project.
+`PageQuery` and `PageResult` have zero framework dependencies — copy them into any Java project.
 
 ## Tests
 
